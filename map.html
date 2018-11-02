@@ -280,7 +280,6 @@
         }
 
     var info = L.marker([27.444916, -19.907227], {icon: icinfomant}).bindTooltip("Infomant",customOptions);
-    var obstfrau = L.marker([16.956979, -32.667847], {icon: icinfo}).bindTooltip("Obststand Frau",customOptions);
     var nackter = L.marker([30.727671, -31.563721], {icon: icinfo}).bindTooltip("Nackter Mann ????",customOptions);
     var dealer = L.marker([5.331644, -22.060547], {icon: icinfo}).bindTooltip("Vll Dealer ????",customOptions);
     var schuerze = L.marker([8.711359, -23.24707], {icon: icinfo}).bindTooltip("Mann mit Schuerze",customOptions);
@@ -323,6 +322,8 @@
     var kaffeefeld = L.marker([35.88905, -26.054077], {icon: ickaff}).bindTooltip("Kaffee Plantage",customOptions);
 
     var spargelfeld = L.marker([35.375614, -24.433594], {icon: icspar}).bindTooltip("Spargelfeld",customOptions);
+    var obstfrau = L.marker([16.956979, -32.667847], {icon: icspar}).bindTooltip("Ankauf von Spargel",customOptions);
+    var spargelverkauf = L.marker([28.8158, -16.166382], {icon: icspar}).bindTooltip("Verarbeitung zu Eingelegten Spargel",customOptions);
 
     var baumwollfeld = L.marker([30.382353, -19.110718], {icon: icwolle}).bindTooltip("Baumwollfeld",customOptions);
     var baumwollverarbeiter = L.marker([35.321848, -27.339478], {icon: icwolle}).bindTooltip("Verarbeitung zu Baumwolle",customOptions);
@@ -349,7 +350,7 @@
 
     //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
     var inf = L.layerGroup([info]);
-    var unb = L.layerGroup([nackter,obstfrau,dealer,schuerze]);
+    var unb = L.layerGroup([nackter,dealer,schuerze]);
     var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
     var pel = L.layerGroup([wald, Pellets, Baumarkt]);
     var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer,Ammoniak,kuhweide]);
@@ -361,7 +362,7 @@
     var eisen = L.layerGroup([eisenmine,stahl,presse,Baumarkt,wald,Pellets]);
     var koks = L.layerGroup([koksverarbeiter]);
     var weed = L.layerGroup([hanffeld]);
-    var spargel = L.layerGroup([spargelfeld]);
+    var spargel = L.layerGroup([spargelfeld,obstfrau,spargelverkauf]);
     var bier = L.layerGroup([hopfenfeld,bierabfueller,bierverarbeiter,Großhandel,quellwasser]);
     var baumwolle = L.layerGroup([baumwollfeld,baumwollverarbeiter,baumwollverkauf]);
     var kaffee = L.layerGroup([kaffeefeld]);
