@@ -157,7 +157,8 @@
     var obstfrau = L.marker([16.956979, -32.667847], {icon: icinfo}).bindPopup("Obststand Frau",customOptions);
     var nackter = L.marker([30.727671, -31.563721], {icon: icinfo}).bindPopup("Nackter Mann ????",customOptions);
     var dealer = L.marker([5.331644, -22.060547], {icon: icinfo}).bindPopup("Vll Dealer ????",customOptions);
-
+    var dicker = L.marker([16.578288, -39.534302], {icon: icinfo}) .bindPopup("Dicker Man",customOptions ); 
+    
     var kuhweide = L.marker([30.263812, -17.303467], {icon: icduenger}).bindPopup("Kuhweide",customOptions);
     var duenger = L.marker([18.187607, -21.313477], {icon: icduenger}).bindPopup("Verarbeiter von Duenger",customOptions);
     var duengerverkauf = L.marker([12.983148, -33.156738], {icon: icduenger}).bindPopup("Verkauf von Duenger",customOptions);
@@ -221,7 +222,7 @@
 
     //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
     var inf = L.layerGroup([info]);
-    var unb = L.layerGroup([nackter,obstfrau,dealer]);
+    var unb = L.layerGroup([nackter,obstfrau,dealer, dicker]);
     var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
     var pel = L.layerGroup([wald, Pellets, Baumarkt]);
     var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer,Ammoniak,kuhweide]);
