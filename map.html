@@ -157,8 +157,7 @@
     var obstfrau = L.marker([16.956979, -32.667847], {icon: icinfo}).bindPopup("Obststand Frau",customOptions);
     var nackter = L.marker([30.727671, -31.563721], {icon: icinfo}).bindPopup("Nackter Mann ????",customOptions);
     var dealer = L.marker([5.331644, -22.060547], {icon: icinfo}).bindPopup("Vll Dealer ????",customOptions);
-    var dicker = L.marker([16.578288, -39.534302], {icon: icinfo}) .bindPopup("Dicker Man",customOptions ); 
-    
+
     var kuhweide = L.marker([30.263812, -17.303467], {icon: icduenger}).bindPopup("Kuhweide",customOptions);
     var duenger = L.marker([18.187607, -21.313477], {icon: icduenger}).bindPopup("Verarbeiter von Duenger",customOptions);
     var duengerverkauf = L.marker([12.983148, -33.156738], {icon: icduenger}).bindPopup("Verkauf von Duenger",customOptions);
@@ -205,6 +204,7 @@
     var maisfeld = L.marker([31.348946, -17.781372], {icon: icmai}).bindPopup("Maisfeld",customOptions);
     var travor = L.marker([6.58276, -21.439819], {icon: icmai}).bindPopup("Verarbeiter Mais-Maische",customOptions);
     var rocker = L.marker([31.423976, -13.782349], {icon: icmai}).bindPopup("verarbeiter Moonshine",customOptions);
+    var dicker = L.marker([16.578288, -39.534302], {icon: icmai}) .bindPopup("Verkauf von Moonshine",customOptions );
 
     var pfirsichfeld = L.marker([30.935213, -17.671509], {icon: icpfi}).bindPopup("Pfirsichfeld",customOptions);
     var pfirsichverkauf = L.marker([31.975464, -31.316528], {icon: icpfi}).bindPopup("Ankauf von Pfirsichen",customOptions);
@@ -222,7 +222,7 @@
 
     //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
     var inf = L.layerGroup([info]);
-    var unb = L.layerGroup([nackter,obstfrau,dealer, dicker]);
+    var unb = L.layerGroup([nackter,obstfrau,dealer]);
     var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
     var pel = L.layerGroup([wald, Pellets, Baumarkt]);
     var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer,Ammoniak,kuhweide]);
@@ -239,7 +239,7 @@
     var baumwolle = L.layerGroup([baumwollfeld,baumwollverarbeiter,baumwollverkauf]);
     var kaffee = L.layerGroup([kaffeefeld]);
     var rosen = L.layerGroup([rosenfeld,rosenverarbeiter]);
-    var mais = L.layerGroup([maisfeld,travor,rocker]);
+    var mais = L.layerGroup([maisfeld,travor,rocker,dicker]);
     var baseMaps = {
  };
 
@@ -268,7 +268,7 @@
    };
 
   L.control.layers(baseMaps,route).addTo(map);
-
+  L.control.attribution().setPrefix('Version 0.2').addAttribution("Revision 1").setPosition('bottomleft').addTo(map);
   var popup = L.popup();
 
 function onMapClick(e) {
