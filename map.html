@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="leaflet.css" />
 
 <script src="leaflet.js"></script>
+<script src="clipboard.js"></script>
 
 <style>
 #map {
@@ -24,6 +25,7 @@
 
 <script>
 
+    var clipboard = new ClipboardJS('.btn');
     var map = L.map('map',{
     center: [22.248429, -25.773926],
     zoom: 4
@@ -268,20 +270,20 @@
    };
 
   L.control.layers(baseMaps,route).addTo(map);
-  L.control.attribution().setPrefix('Version 0.2').addAttribution("Revision 1").setPosition('bottomleft').addTo(map);
+  L.control.attribution().setPrefix('Version 0.2').addAttribution("Revision 2").setPosition('bottomleft').addTo(map);
   var popup = L.popup();
 
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("Coordinates: " + e.latlng.toString())
+        .setContent('<div id="btn" data-clipboard-text="1"><span>Coordinates: '+e.latlng+'</span></div>' + '<button class="btn" data-clipboard-target= "#btn"> Copy </button>' )
         .openOn(map);
 }
 
 map.on('contextmenu', onMapClick);
 
-
 </script>
+
 <a href="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1683264054">Farming Tabelle</a>
 
 </body>
