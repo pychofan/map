@@ -23,401 +23,418 @@
 <body>
     <div id="map"></div>
 
-<script>
+    <script>
 
-    var clip = new ClipboardJS('.btn');
-    if (navigator.userAgent.indexOf("Chrome") !== -1){
-      var map = L.map('map',{
-      center: [22.248429, -25.773926],
-      zoom: 4
+        var clip = new ClipboardJS('.btn');
+        if (navigator.userAgent.indexOf("Chrome") !== -1) {
+            var map = L.map('map', {
+                center: [22.248429, -25.773926],
+                zoom: 4
 
-      });
-      L.tileLayer('blue.webp', {
-          maxZoom: 8 ,
-          minZoom: 4,
-          tileSize: 50
-        }).addTo(map);
+            });
+            L.tileLayer('blue.webp', {
+                maxZoom: 8,
+                minZoom: 4,
+                tileSize: 50
+            }).addTo(map);
 
-        var imageUrl = 'gta.webp',
-            imageBounds = [[0, 0], [40.773941, -50.12544]];
-        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+            var imageUrl = 'gta.webp',
+                imageBounds = [[0, 0], [40.773941, -50.12544]];
+            L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-      var icduenger = L.icon({
-          iconUrl: 'icon/duenger.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwald = L.icon({
-          iconUrl: 'icon/wald.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icoel = L.icon({
-          iconUrl: 'icon/Oil.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icbau = L.icon({
-          iconUrl: 'icon/baumarkt.webp',
-          iconSize: [75, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icora = L.icon({
-          iconUrl: 'icon/orange.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var iczem = L.icon({
-          iconUrl: 'icon/zement.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwei = L.icon({
-          iconUrl: 'icon/wein.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var iclac = L.icon({
-          iconUrl: 'icon/lack.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwas = L.icon({
-          iconUrl: 'icon/wasser.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icinfo = L.icon({
-          iconUrl: 'icon/info.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-     var icteil = L.icon({
-          iconUrl: 'icon/teil.webp',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwolle = L.icon({
-            iconUrl: 'icon/baumwolle.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icduenger = L.icon({
+                iconUrl: 'icon/duenger.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ickaff = L.icon({
-            iconUrl: 'icon/kaffee.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwald = L.icon({
+                iconUrl: 'icon/wald.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icspar = L.icon({
-            iconUrl: 'icon/spargel.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icoel = L.icon({
+                iconUrl: 'icon/Oil.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icmai = L.icon({
-            iconUrl: 'icon/mais.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icbau = L.icon({
+                iconUrl: 'icon/baumarkt.webp',
+                iconSize: [75, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icpfi = L.icon({
-            iconUrl: 'icon/pfirsich.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icora = L.icon({
+                iconUrl: 'icon/orange.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icrose = L.icon({
-            iconUrl: 'icon/rose.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var iczem = L.icon({
+                iconUrl: 'icon/zement.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ichopfen = L.icon({
-            iconUrl: 'icon/hopfen.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwei = L.icon({
+                iconUrl: 'icon/wein.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ichanf = L.icon({
-            iconUrl: 'icon/hanf.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var iclac = L.icon({
+                iconUrl: 'icon/lack.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ickoks = L.icon({
-            iconUrl: 'icon/Koks.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwas = L.icon({
+                iconUrl: 'icon/wasser.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icinfomant = L.icon({
-            iconUrl: 'icon/infomant.webp',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icinfo = L.icon({
+                iconUrl: 'icon/info.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-    } else {
-      var map = L.map('map',{
-      center: [22.248429, -25.773926],
-      zoom: 4
+            var icteil = L.icon({
+                iconUrl: 'icon/teil.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icwolle = L.icon({
+                iconUrl: 'icon/baumwolle.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ickaff = L.icon({
+                iconUrl: 'icon/kaffee.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icspar = L.icon({
+                iconUrl: 'icon/spargel.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icmai = L.icon({
+                iconUrl: 'icon/mais.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icpfi = L.icon({
+                iconUrl: 'icon/pfirsich.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icrose = L.icon({
+                iconUrl: 'icon/rose.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ichopfen = L.icon({
+                iconUrl: 'icon/hopfen.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ichanf = L.icon({
+                iconUrl: 'icon/hanf.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ickoks = L.icon({
+                iconUrl: 'icon/Koks.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icinfomant = L.icon({
+                iconUrl: 'icon/infomant.webp',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+        } else {
+            var map = L.map('map', {
+                center: [22.248429, -25.773926],
+                zoom: 4
 
-      });
-      L.tileLayer('blue.png', {
-          maxZoom: 8 ,
-          minZoom: 4,
-          tileSize: 50
-        }).addTo(map);
+            });
+            L.tileLayer('blue.png', {
+                maxZoom: 8,
+                minZoom: 4,
+                tileSize: 50
+            }).addTo(map);
 
-        var imageUrl = 'gta.png',
-            imageBounds = [[0, 0], [40.773941, -50.12544]];
-        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+            var imageUrl = 'gta.png',
+                imageBounds = [[0, 0], [40.773941, -50.12544]];
+            L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-      var icduenger = L.icon({
-          iconUrl: 'icon/duenger.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwald = L.icon({
-          iconUrl: 'icon/wald.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icoel = L.icon({
-          iconUrl: 'icon/Oil.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icbau = L.icon({
-          iconUrl: 'icon/baumarkt.png',
-          iconSize: [75, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icora = L.icon({
-          iconUrl: 'icon/orange.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var iczem = L.icon({
-          iconUrl: 'icon/zement.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwei = L.icon({
-          iconUrl: 'icon/wein.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var iclac = L.icon({
-          iconUrl: 'icon/lack.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwas = L.icon({
-          iconUrl: 'icon/wasser.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icinfo = L.icon({
-          iconUrl: 'icon/info.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-     var icteil = L.icon({
-          iconUrl: 'icon/teil.png',
-          iconSize: [25, 25], // size of the icon
-          popupAnchor: [0,-15]
-          });
-      var icwolle = L.icon({
-            iconUrl: 'icon/baumwolle.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icduenger = L.icon({
+                iconUrl: 'icon/duenger.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ickaff = L.icon({
-            iconUrl: 'icon/kaffee.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwald = L.icon({
+                iconUrl: 'icon/wald.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icspar = L.icon({
-            iconUrl: 'icon/spargel.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icoel = L.icon({
+                iconUrl: 'icon/Oil.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icmai = L.icon({
-            iconUrl: 'icon/mais.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icbau = L.icon({
+                iconUrl: 'icon/baumarkt.png',
+                iconSize: [75, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icpfi = L.icon({
-            iconUrl: 'icon/pfirsich.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icora = L.icon({
+                iconUrl: 'icon/orange.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icrose = L.icon({
-            iconUrl: 'icon/rose.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var iczem = L.icon({
+                iconUrl: 'icon/zement.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ichopfen = L.icon({
-            iconUrl: 'icon/hopfen.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwei = L.icon({
+                iconUrl: 'icon/wein.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ichanf = L.icon({
-            iconUrl: 'icon/hanf.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var iclac = L.icon({
+                iconUrl: 'icon/lack.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var ickoks = L.icon({
-            iconUrl: 'icon/Koks.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icwas = L.icon({
+                iconUrl: 'icon/wasser.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-      var icinfomant = L.icon({
-            iconUrl: 'icon/infomant.png',
-            iconSize: [25, 25], // size of the icon
-            popupAnchor: [0,-15]
+            var icinfo = L.icon({
+                iconUrl: 'icon/info.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
             });
-     };
+            var icteil = L.icon({
+                iconUrl: 'icon/teil.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icwolle = L.icon({
+                iconUrl: 'icon/baumwolle.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ickaff = L.icon({
+                iconUrl: 'icon/kaffee.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icspar = L.icon({
+                iconUrl: 'icon/spargel.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icmai = L.icon({
+                iconUrl: 'icon/mais.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icpfi = L.icon({
+                iconUrl: 'icon/pfirsich.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icrose = L.icon({
+                iconUrl: 'icon/rose.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ichopfen = L.icon({
+                iconUrl: 'icon/hopfen.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ichanf = L.icon({
+                iconUrl: 'icon/hanf.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var ickoks = L.icon({
+                iconUrl: 'icon/Koks.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+            var icinfomant = L.icon({
+                iconUrl: 'icon/infomant.png',
+                iconSize: [25, 25], // size of the icon
+                popupAnchor: [0, -15]
+            });
+        };
 
 
 
-    var customOptions =
+        var customOptions =
         {
-          permanent: true,
-          opacity: 0.8,
+            permanent: true,
+            opacity: 0.8,
 
         }
 
-    var info = L.marker([27.444916, -19.907227], {icon: icinfomant}).bindTooltip("Infomant",customOptions);
-    var nackter = L.marker([30.727671, -31.563721], {icon: icinfo}).bindTooltip("Nackter Mann ????",customOptions);
-    var dealer = L.marker([5.331644, -22.060547], {icon: icinfo}).bindTooltip("Vll Dealer ????",customOptions);
-    var schuerze = L.marker([8.711359, -23.24707], {icon: icinfo}).bindTooltip("Mann mit Schuerze",customOptions);
+        var sandburg = L.marker([9.882275, -32.980957], { icon: icinfo }).bindTooltip("Sandburgen Mann", customOptions);
 
-    var kuhweide = L.marker([30.263812, -17.303467], {icon: icduenger}).bindTooltip("Kuhweide",customOptions);
-    var duenger = L.marker([18.187607, -21.313477], {icon: icduenger}).bindTooltip("Verarbeitung zu Duenger",customOptions);
-    var duengerverkauf = L.marker([12.983148, -33.156738], {icon: icduenger}).bindTooltip("Ankauf von Duenger",customOptions);
+        var info = L.marker([27.444916, -19.907227], { icon: icinfomant }).bindTooltip("Infomant", customOptions);
+        var nackter = L.marker([30.727671, -31.563721], { icon: icinfo }).bindTooltip("Nackter Mann ????", customOptions);
+        var dealer = L.marker([5.331644, -22.060547], { icon: icinfo }).bindTooltip("Vll Dealer ????", customOptions);
+        var schuerze = L.marker([8.711359, -23.24707], { icon: icinfo }).bindTooltip("Mann mit Schuerze", customOptions);
 
-    var wald = L.marker([33.797409, -29.921265], {icon: icwald}).bindTooltip("Wald",customOptions);
-    var Pellets = L.marker([31.938178, -29.404907], {icon: icwald}).bindTooltip("Verarbeitung zu Pellets",customOptions);
-    var Baumarkt = L.marker([26.037042, -16.292725], {icon: icbau}).bindTooltip("Ankauf von Sack Pellets und Fahzeug Teile",customOptions);
+        var kuhweide = L.marker([30.263812, -17.303467], { icon: icduenger }).bindTooltip("Kuhweide", customOptions);
+        var duenger = L.marker([18.187607, -21.313477], { icon: icduenger }).bindTooltip("Verarbeitung zu Duenger", customOptions);
+        var duengerverkauf = L.marker([12.983148, -33.156738], { icon: icduenger }).bindTooltip("Ankauf von Duenger", customOptions);
 
-    var oelverarbeiter = L.marker([19.746024, -16.089478], {icon: icoel}).bindTooltip("Verarbeitung zu Gallone Benzin",customOptions);
-    var Benzinverkauufer = L.marker([22.309426, -37.446899], {icon: icoel}).bindTooltip("Ankauf von Benzin",customOptions);
-    var oelfeld = L.marker([24.256981, -24.938965], {icon: icoel}).bindTooltip("Oelfeld",customOptions);
-    var Ammoniak = L.marker([26.725987, -12.771606], {icon: icduenger}).bindTooltip("Verarbeitung zu Ammoniak",customOptions);
+        var wald = L.marker([33.797409, -29.921265], { icon: icwald }).bindTooltip("Wald", customOptions);
+        var Pellets = L.marker([31.938178, -29.404907], { icon: icwald }).bindTooltip("Verarbeitung zu Pellets", customOptions);
+        var Baumarkt = L.marker([26.037042, -16.292725], { icon: icbau }).bindTooltip("Ankauf von Sack Pellets und Fahzeug Teile", customOptions);
 
-    var orangenfeld = L.marker([35.456196, -26.065063], {icon: icora}).bindTooltip("Orangenfeld",customOptions);
-    var orangenverkaeufer = L.marker([29.051368, -16.012573], {icon: icora}).bindTooltip("Orangen Limo Bude",customOptions);
+        var oelverarbeiter = L.marker([19.746024, -16.089478], { icon: icoel }).bindTooltip("Verarbeitung zu Gallone Benzin", customOptions);
+        var Benzinverkauufer = L.marker([22.309426, -37.446899], { icon: icoel }).bindTooltip("Ankauf von Benzin", customOptions);
+        var oelfeld = L.marker([24.256981, -24.938965], { icon: icoel }).bindTooltip("Oelfeld", customOptions);
+        var Ammoniak = L.marker([26.725987, -12.771606], { icon: icduenger }).bindTooltip("Verarbeitung zu Ammoniak", customOptions);
 
-    var steinbruch = L.marker([24.151766, -16.100464], {icon: iczem}).bindTooltip("Steinbruch",customOptions);
-    var sand = L.marker([8.374562, -31.810913], {icon: iczem}).bindTooltip("Sand",customOptions);
-    var Zementverarbeiter = L.marker([20.807472, -22.208862], {icon: iczem}).bindTooltip("Verarbeitung zu Zement",customOptions);
-    var Zementverkauf = L.marker([10.833306, -28.948975], {icon: iczem}).bindTooltip("Ankauf von Zement",customOptions);
+        var orangenfeld = L.marker([35.456196, -26.065063], { icon: icora }).bindTooltip("Orangenfeld", customOptions);
+        var orangenverkaeufer = L.marker([29.051368, -16.012573], { icon: icora }).bindTooltip("Orangen Limo Bude", customOptions);
 
-    var weinfeld = L.marker([21.130622, -34.019165], {icon: icwei}).bindTooltip("Weinfeld",customOptions);
-    var quellwasser = L.marker([24.706915, -27.894287], {icon: icwas}).bindTooltip("Quellwasserstelle",customOptions);
-    var maische = L.marker([26.74561, -23.477783], {icon: icwei}).bindTooltip("Verarbeitung zu Maische",customOptions);
-    var flasche = L.marker([9.703643, -26.553955], {icon: icwei}).bindTooltip("Abfueller von Wein Flaschen",customOptions);
-    var Großhandel = L.marker([7.977638, -26.691284], {icon: icbau}).bindTooltip("Ankauf von Wein und Bier",customOptions);
+        var steinbruch = L.marker([24.151766, -16.100464], { icon: iczem }).bindTooltip("Steinbruch", customOptions);
+        var sand = L.marker([8.374562, -31.810913], { icon: iczem }).bindTooltip("Sand", customOptions);
+        var Zementverarbeiter = L.marker([20.807472, -22.208862], { icon: iczem }).bindTooltip("Verarbeitung zu Zement", customOptions);
+        var Zementverkauf = L.marker([10.833306, -28.948975], { icon: iczem }).bindTooltip("Ankauf von Zement", customOptions);
 
-    var altlack = L.marker([29.257649, -11.744385], {icon: iclac}).bindTooltip("Alt Lack",customOptions);
-    var lackverarbeiter = L.marker([25.958045, -25.740967], {icon: iclac}).bindTooltip("Verarbeitung zu Lack",customOptions);
-    var lackverkauf = L.marker([5.85101, -26.51001], {icon: iclac}).bindTooltip("Ankauf von Lack",customOptions);
+        var weinfeld = L.marker([21.130622, -34.019165], { icon: icwei }).bindTooltip("Weinfeld", customOptions);
+        var quellwasser = L.marker([24.706915, -27.894287], { icon: icwas }).bindTooltip("Quellwasserstelle", customOptions);
+        var maische = L.marker([26.74561, -23.477783], { icon: icwei }).bindTooltip("Verarbeitung zu Maische", customOptions);
+        var flasche = L.marker([9.703643, -26.553955], { icon: icwei }).bindTooltip("Abfueller von Wein Flaschen", customOptions);
+        var Großhandel = L.marker([7.977638, -26.691284], { icon: icbau }).bindTooltip("Ankauf von Wein und Bier", customOptions);
 
-    var eisenmine = L.marker([23.84565, -15.205078], {icon: icteil}).bindTooltip("Eisenmine",customOptions);
-    var stahl = L.marker([7.362467, -22.769165], {icon: icteil}).bindTooltip("Verarbeitung zu Stahl",customOptions);
-    var presse = L.marker([7.302536, -22.648315], {icon: icteil}).bindTooltip("Verarbeitung zu Fahrzeug Teilen",customOptions);
+        var altlack = L.marker([29.257649, -11.744385], { icon: iclac }).bindTooltip("Alt Lack", customOptions);
+        var lackverarbeiter = L.marker([25.958045, -25.740967], { icon: iclac }).bindTooltip("Verarbeitung zu Lack", customOptions);
+        var lackverkauf = L.marker([5.85101, -26.51001], { icon: iclac }).bindTooltip("Ankauf von Lack", customOptions);
 
-    var kaffeefeld = L.marker([35.88905, -26.054077], {icon: ickaff}).bindTooltip("Kaffee Plantage",customOptions);
+        var eisenmine = L.marker([23.84565, -15.205078], { icon: icteil }).bindTooltip("Eisenmine", customOptions);
+        var stahl = L.marker([7.362467, -22.769165], { icon: icteil }).bindTooltip("Verarbeitung zu Stahl", customOptions);
+        var presse = L.marker([7.302536, -22.648315], { icon: icteil }).bindTooltip("Verarbeitung zu Fahrzeug Teilen", customOptions);
 
-    var spargelfeld = L.marker([35.375614, -24.433594], {icon: icspar}).bindTooltip("Spargelfeld",customOptions);
-    var obstfrau = L.marker([16.956979, -32.667847], {icon: icspar}).bindTooltip("Ankauf von Spargel",customOptions);
-    var spargelverkauf = L.marker([28.8158, -16.166382], {icon: icspar}).bindTooltip("Verarbeitung zu Eingelegten Spargel",customOptions);
+        var kaffeefeld = L.marker([35.88905, -26.054077], { icon: ickaff }).bindTooltip("Kaffee Plantage", customOptions);
 
-    var baumwollfeld = L.marker([30.382353, -19.110718], {icon: icwolle}).bindTooltip("Baumwollfeld",customOptions);
-    var baumwollverarbeiter = L.marker([35.321848, -27.339478], {icon: icwolle}).bindTooltip("Verarbeitung zu Baumwolle",customOptions);
-    var baumwollverkauf = L.marker([18.046644, -39.940796], {icon: icwolle}).bindTooltip("Ankauf von Baumwolle",customOptions);
+        var spargelfeld = L.marker([35.375614, -24.433594], { icon: icspar }).bindTooltip("Spargelfeld", customOptions);
+        var obstfrau = L.marker([16.956979, -32.667847], { icon: icspar }).bindTooltip("Ankauf von Spargel", customOptions);
+        var spargelverkauf = L.marker([28.8158, -16.166382], { icon: icspar }).bindTooltip("Verarbeitung zu Eingelegten Spargel", customOptions);
 
-    var maisfeld = L.marker([31.348946, -17.781372], {icon: icmai}).bindTooltip("Maisfeld",customOptions);
-    var travor = L.marker([6.58276, -21.439819], {icon: icmai}).bindTooltip("Verarbeitung zu Mais-Maische",customOptions);
-    var rocker = L.marker([31.423976, -13.782349], {icon: icmai}).bindTooltip("Verarbeitung zu Moonshine",customOptions);
-    var dicker = L.marker([16.578288, -39.534302], {icon: icmai}) .bindTooltip("Ankauf von Moonshine",customOptions );
+        var baumwollfeld = L.marker([30.382353, -19.110718], { icon: icwolle }).bindTooltip("Baumwollfeld", customOptions);
+        var baumwollverarbeiter = L.marker([35.321848, -27.339478], { icon: icwolle }).bindTooltip("Verarbeitung zu Baumwolle", customOptions);
+        var baumwollverkauf = L.marker([18.046644, -39.940796], { icon: icwolle }).bindTooltip("Ankauf von Baumwolle", customOptions);
 
-    var pfirsichfeld = L.marker([30.935213, -17.671509], {icon: icpfi}).bindTooltip("Pfirsichfeld",customOptions);
-    var pfirsichverkauf = L.marker([31.975464, -31.316528], {icon: icpfi}).bindTooltip("Ankauf von Pfirsichen",customOptions);
+        var maisfeld = L.marker([31.348946, -17.781372], { icon: icmai }).bindTooltip("Maisfeld", customOptions);
+        var travor = L.marker([6.58276, -21.439819], { icon: icmai }).bindTooltip("Verarbeitung zu Mais-Maische", customOptions);
+        var rocker = L.marker([31.423976, -13.782349], { icon: icmai }).bindTooltip("Verarbeitung zu Moonshine", customOptions);
+        var dicker = L.marker([16.578288, -39.534302], { icon: icmai }).bindTooltip("Ankauf von Moonshine", customOptions);
 
-    var rosenfeld = L.marker([32.583849, -25.08728], {icon: icrose}).bindTooltip("Rosenfeld",customOptions);
-    var rosenverarbeiter = L.marker([13.464422, -33.997192], {icon: icrose}).bindTooltip("Verarbeitung zu Rosenstrauße",customOptions);
+        var pfirsichfeld = L.marker([30.935213, -17.671509], { icon: icpfi }).bindTooltip("Pfirsichfeld", customOptions);
+        var pfirsichverkauf = L.marker([31.975464, -31.316528], { icon: icpfi }).bindTooltip("Ankauf von Pfirsichen", customOptions);
 
-    var hopfenfeld = L.marker([31.081165, -19.599609], {icon: ichopfen}).bindTooltip("Hopfenfeld",customOptions);
-    var bierverarbeiter = L.marker([34.220887, -28.168945], {icon: ichopfen}).bindTooltip("Verarbeitung zu Bier",customOptions);
-    var bierabfueller = L.marker([7.313433, -23.648071], {icon: ichopfen}).bindTooltip("Abfueller von Bier",customOptions);
+        var rosenfeld = L.marker([32.583849, -25.08728], { icon: icrose }).bindTooltip("Rosenfeld", customOptions);
+        var rosenverarbeiter = L.marker([13.464422, -33.997192], { icon: icrose }).bindTooltip("Verarbeitung zu Rosenstrauße", customOptions);
 
-    var hanffeld = L.marker([32.778038, -18.182373], {icon: ichanf}).bindTooltip("Hanffeld",customOptions);
+        var hopfenfeld = L.marker([31.081165, -19.599609], { icon: ichopfen }).bindTooltip("Hopfenfeld", customOptions);
+        var bierverarbeiter = L.marker([34.220887, -28.168945], { icon: ichopfen }).bindTooltip("Verarbeitung zu Bier", customOptions);
+        var bierabfueller = L.marker([7.313433, -23.648071], { icon: ichopfen }).bindTooltip("Abfueller von Bier", customOptions);
 
-    var koksverarbeiter = L.marker([29.257649, -11.744385], {icon: ickoks }).bindTooltip("Verarbeitung zu Koks",customOptions);
+        var hanffeld = L.marker([32.778038, -18.182373], { icon: ichanf }).bindTooltip("Hanffeld", customOptions);
 
-    //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
-    var inf = L.layerGroup([info]);
-    var unb = L.layerGroup([nackter,dealer,schuerze]);
-    var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
-    var pel = L.layerGroup([wald, Pellets, Baumarkt]);
-    var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer,Ammoniak,kuhweide]);
-    var orangen = L.layerGroup([orangenfeld,orangenverkaeufer]);
-    var pfirsich = L.layerGroup([pfirsichfeld,pfirsichverkauf]);
-    var zement = L.layerGroup([steinbruch,sand,Zementverarbeiter,Zementverkauf]);
-    var wein = L.layerGroup([weinfeld,quellwasser,maische,flasche,Großhandel]);
-    var lack = L.layerGroup([altlack,lackverarbeiter,lackverkauf,quellwasser]);
-    var eisen = L.layerGroup([eisenmine,stahl,presse,Baumarkt,wald,Pellets]);
-    var koks = L.layerGroup([koksverarbeiter]);
-    var weed = L.layerGroup([hanffeld]);
-    var spargel = L.layerGroup([spargelfeld,obstfrau,spargelverkauf]);
-    var bier = L.layerGroup([hopfenfeld,bierabfueller,bierverarbeiter,Großhandel,quellwasser]);
-    var baumwolle = L.layerGroup([baumwollfeld,baumwollverarbeiter,baumwollverkauf]);
-    var kaffee = L.layerGroup([kaffeefeld]);
-    var rosen = L.layerGroup([rosenfeld,rosenverarbeiter]);
-    var mais = L.layerGroup([maisfeld,travor,rocker,dicker]);
-    var baseMaps = {
- };
+        var koksverarbeiter = L.marker([29.257649, -11.744385], { icon: ickoks }).bindTooltip("Verarbeitung zu Koks", customOptions);
+
+        //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
+        var burg = L.layerGroup([sand, sandburg]);
+        var algen = L.layerGroup([]);
+        var golf = L.layerGroup([]);
+        var inf = L.layerGroup([info]);
+        var unb = L.layerGroup([nackter, dealer, schuerze]);
+        var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
+        var pel = L.layerGroup([wald, Pellets, Baumarkt]);
+        var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer, Ammoniak, kuhweide]);
+        var orangen = L.layerGroup([orangenfeld, orangenverkaeufer]);
+        var pfirsich = L.layerGroup([pfirsichfeld, pfirsichverkauf]);
+        var zement = L.layerGroup([steinbruch, sand, Zementverarbeiter, Zementverkauf]);
+        var wein = L.layerGroup([weinfeld, quellwasser, maische, flasche, Großhandel]);
+        var lack = L.layerGroup([altlack, lackverarbeiter, lackverkauf, quellwasser]);
+        var eisen = L.layerGroup([eisenmine, stahl, presse, Baumarkt, wald, Pellets]);
+        var koks = L.layerGroup([koksverarbeiter]);
+        var weed = L.layerGroup([hanffeld]);
+        var spargel = L.layerGroup([spargelfeld, obstfrau, spargelverkauf]);
+        var bier = L.layerGroup([hopfenfeld, bierabfueller, bierverarbeiter, Großhandel, quellwasser]);
+        var baumwolle = L.layerGroup([baumwollfeld, baumwollverarbeiter, baumwollverkauf]);
+        var kaffee = L.layerGroup([kaffeefeld]);
+        var rosen = L.layerGroup([rosenfeld, rosenverarbeiter]);
+        var mais = L.layerGroup([maisfeld, travor, rocker, dicker]);
+        var leer = L.layerGroup([]);
+        var baseMaps = {
+        };
 
 
-    var route = {
-    //"Alle" : all,
-    "Infomant":inf,
-    "Unbekannt":unb,
-    "Duenger": due ,
-    "Pellets": pel ,
-    "Benzin": oel ,
-    "Orangen": orangen,
-    "Pfirsich":pfirsich,
-    "Zement": zement,
-    "Wein": wein,
-    "Lack":lack,
-    "Bauteile":eisen,
-    "Bier":bier,
-    "Spargel":spargel,
-    "Baumwolle":baumwolle,
-    "Kaffee":kaffee,
-    "Rosen":rosen,
-    "Moonshine":mais,
-    "Koks":koks,
-    "Weed":weed,
-   };
+        var route = {
+            //"Alle" : all,
+            "Infomant": inf,
+            "Unbekannt": unb,
+            //"----------------------":leer,
+            "Sandburgen(Start Job)": burg,
+            "Golfbaelle(Start Job)": golf,
+            "Algen(Start Job)": algen,
+            //"----------------------":leer,
+            "Duenger(Minijob)": due,
+            "Pellets(Minijob)": pel,
+            "Pfirsich(Minijob)": pfirsich,
+            "Spargel(Minijob)": spargel,
+            "Orangen(Minijob)": orangen,
+            "Baumwolle(Minijob)": baumwolle,
+            //"----------------------": leer,
+            "Benzin(Industrie)": oel,
+            "Zement(Industrie)": zement,
+            "Wein(Industrie)": wein,
+            "Lack(Industrie)": lack,
+            "Bauteile(Industrie)": eisen,
+            "Bier(Industrie)": bier,
+            //"----------------------":leer,
+            "Kaffee": kaffee,
+            "Rosen": rosen,
+            "Moonshine(illegal)": mais,
+            "Koks(illegal)": koks,
+            "Weed(illegal)": weed,
+        };
 
-  L.control.layers(baseMaps,route).addTo(map);
-  L.control.attribution().setPrefix('Version 0.2').addAttribution("02.11.2018").setPosition('bottomleft').addTo(map);
+        var layeropt =
+        {
+            collapsed: false,
+        }
+        L.control.layers(baseMaps, route, layeropt).addTo(map);
+        L.control.attribution().setPrefix('Version 0.2 "Banana"').addAttribution("04.11.2018").setPosition('bottomleft').addTo(map);
 
-  clip.on("success", function() {
-  document.getElementById("btn2").insertAdjacentHTML('afterend', '<div>Success</div>');
-});
-clip.on("error", function() {
-document.getElementById("btn2").insertAdjacentHTML('afterend', '<div>Error</div>');
-});
-  var popup = L.popup();
+        clip.on("success", function () {
+            document.getElementById("btn2").insertAdjacentHTML('afterend', '<div>Success</div>');
+        });
+        clip.on("error", function () {
+            document.getElementById("btn2").insertAdjacentHTML('afterend', '<div>Error</div>');
+        });
+        var popup = L.popup();
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent('<div id="btn" data-clipboard-text="1"><span>Coordinates: '+e.latlng+'</span></div>' + '<button id="btn2" class="btn" data-clipboard-target= "#btn"> Copy </button>'  )
-        .openOn(map);
-}
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent('<div id="btn" data-clipboard-text="1"><span>Coordinates: ' + e.latlng + '</span></div>' + '<button id="btn2" class="btn" data-clipboard-target= "#btn"> Copy </button>')
+                .openOn(map);
+        }
 
-map.on('contextmenu', onMapClick);
+        map.on('contextmenu', onMapClick);
 
-</script>
-
-<a href="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1683264054">Farming Tabelle<br></a>
+    </script>
+    <iframe src="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1927433620" width="1300" height="800" frameborder="0"></iframe>
+    <a href="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1683264054">Farming Tabelle<br></a>
 </body>
 
 </html>
