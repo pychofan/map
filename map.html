@@ -4,7 +4,7 @@
 
 <head>
 
-<title>Leaflet Web Map</title>
+<title>Farming Map</title>
 
 <link rel="stylesheet" href="leaflet.css" />
 
@@ -281,14 +281,17 @@
 
         var sandburg = L.marker([9.882275, -32.980957], { icon: icinfo }).bindTooltip("Sandburgen Mann", customOptions);
 
+        var algen = L.marker([14.743011, -22.582397], { icon: icinfo }).bindTooltip("Algensee", customOptions);
+
+        var golfball = L.marker([14.572951, -31.821899], { icon: icinfo }).bindTooltip("Golfplatz", customOptions);
+
         var info = L.marker([27.444916, -19.907227], { icon: icinfomant }).bindTooltip("Infomant", customOptions);
-        var nackter = L.marker([30.727671, -31.563721], { icon: icinfo }).bindTooltip("Nackter Mann ????", customOptions);
         var dealer = L.marker([5.331644, -22.060547], { icon: icinfo }).bindTooltip("Vll Dealer ????", customOptions);
-        var schuerze = L.marker([8.711359, -23.24707], { icon: icinfo }).bindTooltip("Mann mit Schuerze", customOptions);
+
 
         var kuhweide = L.marker([30.263812, -17.303467], { icon: icduenger }).bindTooltip("Kuhweide", customOptions);
-        var duenger = L.marker([18.187607, -21.313477], { icon: icduenger }).bindTooltip("Verarbeitung zu Duenger", customOptions);
-        var duengerverkauf = L.marker([12.983148, -33.156738], { icon: icduenger }).bindTooltip("Ankauf von Duenger", customOptions);
+        var duenger = L.marker([18.187607, -21.313477], { icon: icduenger }).bindTooltip("Verarbeitung zu D&uuml;nger", customOptions);
+        var duengerverkauf = L.marker([12.983148, -33.156738], { icon: icduenger }).bindTooltip("Ankauf von D&uuml;nger", customOptions);
 
         var wald = L.marker([33.797409, -29.921265], { icon: icwald }).bindTooltip("Wald", customOptions);
         var Pellets = L.marker([31.938178, -29.404907], { icon: icwald }).bindTooltip("Verarbeitung zu Pellets", customOptions);
@@ -310,8 +313,8 @@
         var weinfeld = L.marker([21.130622, -34.019165], { icon: icwei }).bindTooltip("Weinfeld", customOptions);
         var quellwasser = L.marker([24.706915, -27.894287], { icon: icwas }).bindTooltip("Quellwasserstelle", customOptions);
         var maische = L.marker([26.74561, -23.477783], { icon: icwei }).bindTooltip("Verarbeitung zu Maische", customOptions);
-        var flasche = L.marker([9.703643, -26.553955], { icon: icwei }).bindTooltip("Abfueller von Wein Flaschen", customOptions);
-        var Großhandel = L.marker([7.977638, -26.691284], { icon: icbau }).bindTooltip("Ankauf von Wein und Bier", customOptions);
+        var flasche = L.marker([9.703643, -26.553955], { icon: icwei }).bindTooltip("Abf&uuml;ller von Wein Flaschen", customOptions);
+        var Großhandel = L.marker([7.977638, -26.691284], { icon: icbau }).bindTooltip("Ankauf von Wein,Kaffee und Bier", customOptions);
 
         var altlack = L.marker([29.257649, -11.744385], { icon: iclac }).bindTooltip("Alt Lack", customOptions);
         var lackverarbeiter = L.marker([25.958045, -25.740967], { icon: iclac }).bindTooltip("Verarbeitung zu Lack", customOptions);
@@ -322,6 +325,8 @@
         var presse = L.marker([7.302536, -22.648315], { icon: icteil }).bindTooltip("Verarbeitung zu Fahrzeug Teilen", customOptions);
 
         var kaffeefeld = L.marker([35.88905, -26.054077], { icon: ickaff }).bindTooltip("Kaffee Plantage", customOptions);
+        var schuerze = L.marker([8.711359, -23.24707], { icon: ickaff }).bindTooltip("Kaffee M&uuml;hle", customOptions);
+        var nackter = L.marker([30.727671, -31.563721], { icon: ickaff }).bindTooltip("Kaffee R&ouml;ster", customOptions);
 
         var spargelfeld = L.marker([35.375614, -24.433594], { icon: icspar }).bindTooltip("Spargelfeld", customOptions);
         var obstfrau = L.marker([16.956979, -32.667847], { icon: icspar }).bindTooltip("Ankauf von Spargel", customOptions);
@@ -344,7 +349,7 @@
 
         var hopfenfeld = L.marker([31.081165, -19.599609], { icon: ichopfen }).bindTooltip("Hopfenfeld", customOptions);
         var bierverarbeiter = L.marker([34.220887, -28.168945], { icon: ichopfen }).bindTooltip("Verarbeitung zu Bier", customOptions);
-        var bierabfueller = L.marker([7.313433, -23.648071], { icon: ichopfen }).bindTooltip("Abfueller von Bier", customOptions);
+        var bierabfueller = L.marker([7.313433, -23.648071], { icon: ichopfen }).bindTooltip("Abf&uuml;ller von Bier", customOptions);
 
         var hanffeld = L.marker([32.778038, -18.182373], { icon: ichanf }).bindTooltip("Hanffeld", customOptions);
 
@@ -352,10 +357,10 @@
 
         //var all = L.layerGroup([kuhweide, duenger, duengerverkauf,baumwollfeld,rosenfeld,rosenverarbeiter,maisfeld,kaffeefeld,baumwollverarbeiter,baumwollverkauf,hopfenfeld,wald,Pellets,spargelfeld,koksverarbeiter,hanffeld,Baumarkt,oelverarbeiter,Benzinverkauufer,oelfeld,Ammoniak,orangenfeld,orangenverkaeufer,steinbruch,sand,Zementverarbeiter,Zementverkauf,weinfeld,quellwasser,maische,flasche,weinverkauf,altlack,lackverarbeiter,lackverkauf,info,nackter,eisenmine,stahl,presse,pfirsichfeld,pfirsichverkauf]);
         var burg = L.layerGroup([sand, sandburg]);
-        var algen = L.layerGroup([]);
-        var golf = L.layerGroup([]);
+        var algen = L.layerGroup([algen]);
+        var golf = L.layerGroup([golfball]);
         var inf = L.layerGroup([info]);
-        var unb = L.layerGroup([nackter, dealer, schuerze]);
+        var unb = L.layerGroup([dealer]);
         var due = L.layerGroup([kuhweide, duenger, duengerverkauf]);
         var pel = L.layerGroup([wald, Pellets, Baumarkt]);
         var oel = L.layerGroup([oelfeld, oelverarbeiter, Benzinverkauufer, Ammoniak, kuhweide]);
@@ -370,7 +375,7 @@
         var spargel = L.layerGroup([spargelfeld, obstfrau, spargelverkauf]);
         var bier = L.layerGroup([hopfenfeld, bierabfueller, bierverarbeiter, Großhandel, quellwasser]);
         var baumwolle = L.layerGroup([baumwollfeld, baumwollverarbeiter, baumwollverkauf]);
-        var kaffee = L.layerGroup([kaffeefeld]);
+        var kaffee = L.layerGroup([kaffeefeld, nackter, schuerze, Pellets, wald, Großhandel]);
         var rosen = L.layerGroup([rosenfeld, rosenverarbeiter]);
         var mais = L.layerGroup([maisfeld, travor, rocker, dicker]);
         var leer = L.layerGroup([]);
@@ -384,10 +389,10 @@
             "Unbekannt": unb,
             //"----------------------":leer,
             "Sandburgen(Start Job)": burg,
-            "Golfbaelle(Start Job)": golf,
+            "Golfb&auml;lle(Start Job)": golf,
             "Algen(Start Job)": algen,
             //"----------------------":leer,
-            "Duenger(Minijob)": due,
+            "D&uuml;nger(Minijob)": due,
             "Pellets(Minijob)": pel,
             "Pfirsich(Minijob)": pfirsich,
             "Spargel(Minijob)": spargel,
@@ -400,8 +405,8 @@
             "Lack(Industrie)": lack,
             "Bauteile(Industrie)": eisen,
             "Bier(Industrie)": bier,
+            "Kaffee(Industrie)": kaffee,
             //"----------------------":leer,
-            "Kaffee": kaffee,
             "Rosen": rosen,
             "Moonshine(illegal)": mais,
             "Koks(illegal)": koks,
@@ -433,8 +438,8 @@
         map.on('contextmenu', onMapClick);
 
     </script>
-    <iframe src="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1927433620" width="1300" height="800" frameborder="0"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1927433620" width="1300" height="800" frameborder="0" allow-same-origin seamless></iframe>
     <a href="https://docs.google.com/spreadsheets/d/1whcMOanNaA7JdiD6_hnR3UFnE307iqntN_zr4337T8I/edit#gid=1683264054">Farming Tabelle<br></a>
 </body>
 
-</html>
+    </html>
